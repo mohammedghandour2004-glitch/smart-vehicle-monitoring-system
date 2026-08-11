@@ -1,6 +1,21 @@
 # Smart Vehicle Monitoring System
 
-Arduino-based vehicle monitoring system developed as my CS50x final project.
+#### Video Demo: https://youtu.be/PUT_YOUR_VIDEO_LINK_HERE
+
+## Description
+
+# Hardware Components
+
+- Arduino Mega 2560
+- HC-SR04 Ultrasonic Sensor
+- NTC Temperature Sensor
+- Potentiometer (Fuel Level Simulation)
+- 16x2 LCD with I2C Module
+- Push Button
+- Green LED
+- Yellow LED
+- Red LED
+- Passive Buzzer
 
 ## Features
 

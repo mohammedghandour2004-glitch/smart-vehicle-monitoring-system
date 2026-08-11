@@ -38,6 +38,14 @@
 
 The system monitors basic vehicle conditions and provides visual and audio alerts based on sensor readings.
 
-## Author
+# Author
 
 Mohammed Ghandour
+
+Specialized Technician in Diagnostic and Embedded Electronics
+
+OFPPT – Sale, Morocco
+
+- GitHub: https://github.com/mohammedghandour2004-glitch
+
+- LinkedIn: https://www.linkedin.com/in/mohammed-ghandour-auto/

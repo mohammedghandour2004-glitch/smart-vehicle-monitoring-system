@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "author": "Codex",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 121.8, "left": -362, "attrs": {} },
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 130, "left": 20, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -118.4,
+      "left": 226.4,
+      "attrs": { "pins": "i2c", "address": "0x27" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sonar",
+      "top": 20.7,
+      "left": 418.3,
+      "attrs": { "distance": "86" }
+    },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc",
+      "top": 357.8,
+      "left": 306.6,
+      "attrs": {}
+    },
+    { "type": "wokwi-potentiometer", "id": "fuelPot", "top": 37.1, "left": 287.8, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "button",
+      "top": 364.7,
+      "left": 70.7,
+      "rotate": 90,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": -16.8,
+      "left": 88.2,
+      "attrs": { "volume": "0.3" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "greenLed",
+      "top": -68,
+      "left": -296.2,
+      "rotate": 270,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "yellowLed",
+      "top": -20,
+      "left": -296.2,
+      "rotate": 270,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "redLed",
+      "top": 37.6,
+      "left": -296.2,
+      "rotate": 270,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rGreen",
+      "top": -53.35,
+      "left": 17.8,
+      "rotate": 180,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rYellow",
+      "top": -5.35,
+      "left": -20.6,
+      "rotate": 180,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rRed",
+      "top": 51.95,
+      "left": -38.4,
+      "rotate": 180,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "mega:A1", "fuelPot:SIG", "orange", [] ],
+    [ "rGreen:2", "greenLed:A", "green", [] ],
+    [ "rYellow:2", "yellowLed:A", "yellow", [] ],
+    [ "rRed:2", "redLed:A", "red", [] ],
+    [ "mega:GND.2", "bb1:bn.25", "black", [ "v21.5", "h-251.85" ] ],
+    [ "mega:5V", "bb1:bp.25", "red", [ "v31.1", "h-213.3", "v0", "h-19.2", "v-38.4" ] ],
+    [ "redLed:C", "bb1:tn.11", "black", [ "h38.4", "v76.4" ] ],
+    [ "yellowLed:C", "bb1:tn.16", "black", [ "h96", "v134" ] ],
+    [ "greenLed:C", "bb1:tn.15", "black", [ "h76.8", "v162.8", "h9.6" ] ],
+    [ "buzzer:1", "mega:8", "purple", [ "v48", "h76.8" ] ],
+    [ "lcd:GND", "bb1:tn.24", "black", [ "h-67.2", "v182.4", "h-211.2", "v48", "h-19.2" ] ],
+    [ "lcd:VCC", "bb1:tp.25", "red", [ "h-57.6", "v163.3", "h-230.4" ] ],
+    [ "buzzer:2", "bb1:tn.20", "black", [ "v19.2", "h-240.4", "v57.6" ] ],
+    [ "bb1:tp.1", "bb1:bp.1", "black", [ "v0.3", "h-27.2", "v172.8" ] ],
+    [ "bb1:tn.1", "bb1:bn.1", "#8f4814", [ "v-0.1", "h-36.8", "v182.4" ] ],
+    [ "mega:GND.5", "fuelPot:GND", "black", [ "v-3.65", "h21.8", "v-182.4", "h-96" ] ],
+    [ "fuelPot:VCC", "mega:5V.2", "red", [ "v19.2", "h47.2" ] ],
+    [ "sonar:GND", "mega:GND.5", "black", [ "v0" ] ],
+    [ "sonar:ECHO", "mega:10", "blue", [ "v48", "h-336.8" ] ],
+    [ "sonar:TRIG", "mega:9", "magenta", [ "v38.4", "h-317.2" ] ],
+    [ "mega:5V.1", "sonar:VCC", "red", [ "v-32.4", "h89.4", "v9.6" ] ],
+    [ "ntc:GND", "bb1:bn.22", "black", [ "h28.8", "v76.8", "h-566.4" ] ],
+    [ "button:2.l", "bb1:bn.23", "black", [ "v0", "h-173" ] ],
+    [ "button:1.l", "mega:2", "blue", [ "v-182.4", "h144" ] ],
+    [ "rRed:1", "mega:7", "green", [ "v0.3", "h37", "v67.2", "h153.6" ] ],
+    [ "rYellow:1", "mega:6", "yellow", [ "v0", "h28.8", "v105.6", "h153.6" ] ],
+    [ "rGreen:1", "mega:5", "green", [ "v0", "h134.4", "v144", "h9.6" ] ],
+    [ "lcd:SCL", "mega:21", "blue", [ "h-28.8", "v86.7", "h172.8", "v105.6" ] ],
+    [ "lcd:SDA", "mega:20", "yellow", [ "h-9.6", "v153.8", "h19.2", "v48", "h105.6" ] ],
+    [ "ntc:VCC", "bb1:bp.21", "red", [ "h19.2", "v57.6", "h-566.4", "v-144" ] ],
+    [ "ntc:OUT", "mega:A0", "magenta", [ "h38.4", "v-67.3", "h-249.6", "v-9.6" ] ]
+  ],
+  "dependencies": {}
+}
